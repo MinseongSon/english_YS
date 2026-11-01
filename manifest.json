@@ -1,0 +1,15 @@
+{
+  "name": "우리 아이 영어 단어장",
+  "short_name": "영어공부",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFF6E9",
+  "theme_color": "#FFF6E9",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3898/3898082.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
