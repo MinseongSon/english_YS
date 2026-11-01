@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
   <title>예승 English</title>
   
-  <!-- PWA 및 모바일 단독 앱(Standalone) 실행 설정 -->
+  <!-- 단독 앱(Standalone) 및 manifest 설정 -->
   <meta name="theme-color" content="#FFF6E9">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="예승 English">
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3898/3898082.png">
-  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3898/3898082.png">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
 
-  <!-- 폰트 설정 (Fredoka & Jua) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Jua&display=swap" rel="stylesheet">
@@ -23,14 +22,14 @@
   <style>
     :root {
       --bg: #FFF6E9;
-      --card: #FFFFFF;
-      --primary: #FF8A00;
-      --primary-light: #FFE8CC;
+      --card: #FFFDF9;
+      --primary: #FF7F3F;
+      --primary-soft: #FFE6D5;
       --secondary: #4ECDC4;
       --accent: #FF6B6B;
-      --text: #332E2A;
+      --text: #2B2623;
       --muted: #8C827A;
-      --border: #F0E4D4;
+      --border: #F2E5D5;
       --success: #2ECC71;
     }
 
@@ -52,10 +51,9 @@
 
     .en {
       font-family: 'Fredoka', sans-serif;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
 
-    /* 상단 헤더 */
     header {
       position: sticky;
       top: 0;
@@ -83,7 +81,7 @@
     }
 
     .star-badge {
-      background: var(--card);
+      background: #FFFFFF;
       border: 2px solid #FFD166;
       padding: 6px 14px;
       border-radius: 99px;
@@ -95,7 +93,7 @@
     }
 
     .icon-btn {
-      background: var(--card);
+      background: #FFFFFF;
       border: 2px solid var(--border);
       width: 40px;
       height: 40px;
@@ -108,12 +106,6 @@
       box-shadow: 0 3px 0 var(--border);
     }
 
-    .icon-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 1px 0 var(--border);
-    }
-
-    /* 메인 컨테이너 */
     main {
       max-width: 520px;
       margin: 0 auto;
@@ -123,46 +115,56 @@
     .card {
       background: var(--card);
       border: 2px solid var(--border);
-      border-radius: 22px;
-      padding: 18px;
+      border-radius: 24px;
+      padding: 20px;
       margin-bottom: 16px;
       box-shadow: 0 5px 0 var(--border);
     }
 
-    .greeting-banner {
-      background: linear-gradient(135deg, #FF9F1C 0%, #FFBF69 100%);
-      color: white;
-      border: none;
-      box-shadow: 0 5px 0 #E08200;
-    }
-
-    .greeting-banner h2 {
-      margin: 0 0 6px 0;
-      font-size: 1.35rem;
-       font-weight: normal;
-    }
-
-    .greeting-banner p {
-      margin: 0;
-      opacity: 0.95;
-      font-size: 0.95rem;
-    }
-
-    .progress-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .progress-pill {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.25);
-      padding: 10px 12px;
-      border-radius: 14px;
-      font-size: 0.9rem;
+    /* 캡처 화면과 동일한 미션 헤더 카드 스타일 */
+    .mission-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .mission-badge {
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .mission-title {
+      margin: 0;
+      font-size: 1.45rem;
+      color: #1F242D;
+    }
+
+    .mission-percent {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 12px;
+      background: #F3E8DA;
+      border-radius: 99px;
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #FF7F3F, #FFB347);
+      border-radius: 99px;
+      transition: width 0.3s ease;
     }
 
     .section-title {
@@ -173,18 +175,16 @@
       align-items: center;
     }
 
-    /* 단어 카드 리스트 */
     .word-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--card);
+      background: #FFFFFF;
       border: 2px solid var(--border);
       border-radius: 18px;
       padding: 14px 16px;
       margin-bottom: 10px;
       box-shadow: 0 4px 0 var(--border);
-      transition: transform 0.1s;
     }
 
     .word-item.done {
@@ -235,7 +235,6 @@
       display: inline-block;
     }
 
-    /* 버튼 스타일 */
     .btn {
       font-family: 'Jua', sans-serif;
       border: none;
@@ -247,7 +246,6 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      transition: transform 0.1s;
     }
 
     .btn:active {
@@ -257,7 +255,7 @@
     .btn-primary {
       background: var(--primary);
       color: white;
-      box-shadow: 0 4px 0 #CC6E00;
+      box-shadow: 0 4px 0 #D96226;
     }
 
     .btn-secondary {
@@ -270,17 +268,15 @@
       background: #E8F8F0;
       color: var(--success);
       border: 2px solid #B8EBD0;
-      box-shadow: none;
     }
 
     .btn-outline {
-      background: var(--card);
+      background: #FFFFFF;
       color: var(--text);
       border: 2px solid var(--border);
       box-shadow: 0 3px 0 var(--border);
     }
 
-    /* 듣기 퀴즈 */
     .quiz-box {
       text-align: center;
       padding: 24px 16px;
@@ -294,17 +290,12 @@
       color: white;
       font-size: 3rem;
       border: none;
-      box-shadow: 0 8px 0 #CC6E00;
+      box-shadow: 0 8px 0 #D96226;
       cursor: pointer;
       margin: 12px auto;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .speaker-big:active {
-      transform: translateY(4px);
-      box-shadow: 0 4px 0 #CC6E00;
     }
 
     .quiz-grid {
@@ -315,7 +306,7 @@
     }
 
     .quiz-option {
-      background: var(--card);
+      background: #FFFFFF;
       border: 3px solid var(--border);
       border-radius: 20px;
       padding: 16px 10px;
@@ -340,7 +331,6 @@
       box-shadow: 0 5px 0 var(--accent);
     }
 
-    /* 카테고리 필터 */
     .cat-scroll {
       display: flex;
       gap: 8px;
@@ -360,7 +350,7 @@
       padding: 8px 16px;
       border-radius: 99px;
       border: 2px solid var(--border);
-      background: var(--card);
+      background: #FFFFFF;
       color: var(--muted);
       font-size: 0.95rem;
       cursor: pointer;
@@ -372,13 +362,12 @@
       border-color: var(--primary);
     }
 
-    /* 하단 탭 네비게이션 */
     nav.tabs {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: var(--card);
+      background: #FFFFFF;
       border-top: 2px solid var(--border);
       padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
       z-index: 30;
@@ -412,11 +401,10 @@
     }
 
     nav.tabs button.active {
-      background: var(--primary-light);
+      background: var(--primary-soft);
       color: var(--primary);
     }
 
-    /* 모달 창 (비밀번호 & 부모님 설정) */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -444,7 +432,6 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    /* 비밀번호 키패드 */
     .pin-dots {
       display: flex;
       justify-content: center;
@@ -478,15 +465,10 @@
       padding: 14px 0;
       border-radius: 16px;
       border: 2px solid var(--border);
-      background: var(--card);
+      background: #FFFFFF;
       color: var(--text);
       box-shadow: 0 4px 0 var(--border);
       cursor: pointer;
-    }
-
-    .key-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--border);
     }
 
     .input-field {
@@ -499,7 +481,6 @@
       margin-bottom: 8px;
     }
 
-    /* 토스트 알림 */
     #toast {
       position: fixed;
       bottom: 95px;
@@ -518,7 +499,6 @@
 </head>
 <body>
 
-  <!-- 상단바 -->
   <header>
     <div class="brand">
       <span>🐣</span>
@@ -533,10 +513,8 @@
     </div>
   </header>
 
-  <!-- 메인 화면 -->
   <main id="app"></main>
 
-  <!-- 하단 네비게이션 탭 -->
   <nav id="tabs" class="tabs">
     <div class="inner">
       <button data-tab="home" class="active" onclick="switchTab('home')">
@@ -554,19 +532,15 @@
     </div>
   </nav>
 
-  <!-- 1. 비밀번호(150320) 입력 모달 -->
+  <!-- 비밀번호(150320) 입력 모달 -->
   <div id="pinModal" class="modal-backdrop">
     <div class="modal-card" style="text-align:center;">
       <h3 style="margin:0 0 6px 0; font-size:1.3rem;">🔒 부모님 확인</h3>
-      <p style="margin:0; color:var(--muted); font-size:0.95rem;">관리 메뉴 비밀번호 6자리를 입력해 주세요.</p>
+      <p style="margin:0; color:var(--muted); font-size:0.95rem;">비밀번호 6자리를 입력해 주세요.</p>
       
       <div class="pin-dots" id="pinDots">
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
+        <div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div>
+        <div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div>
       </div>
       <div id="pinError" style="color:var(--accent); font-size:0.9rem; height:20px; margin-bottom:4px;"></div>
 
@@ -587,7 +561,7 @@
     </div>
   </div>
 
-  <!-- 2. 부모님 관리 모달 (비밀번호 통과 후 열림) -->
+  <!-- 부모님 관리 모달 -->
   <div id="parentModal" class="modal-backdrop">
     <div class="modal-card">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
@@ -595,25 +569,22 @@
         <button class="btn btn-outline" style="padding:6px 12px;" onclick="closeParentModal()">닫기 ✕</button>
       </div>
 
-      <!-- 별 포인트 조정 -->
       <div class="card" style="margin-bottom:12px;">
-        <div style="margin-bottom:8px;">⭐ <strong>예승이 별 포인트 관리</strong></div>
+        <div style="margin-bottom:8px;">⭐ <strong>별 포인트 관리</strong></div>
         <div style="display:flex; gap:8px;">
           <button class="btn btn-primary" style="flex:1;" onclick="adjustStars(10)">+10⭐ 칭찬 선물</button>
           <button class="btn btn-outline" style="flex:1;" onclick="adjustStars(-10)">-10⭐ 차감</button>
         </div>
       </div>
 
-      <!-- 새 단어 추가 -->
       <div class="card" style="margin-bottom:12px;">
-        <div style="margin-bottom:8px;">➕ <strong>단어장에 새 단어 추가</strong></div>
+        <div style="margin-bottom:8px;">➕ <strong>새 단어 추가</strong></div>
         <input id="newWordEn" class="input-field" placeholder="영어 단어 (예: rainbow)">
         <input id="newWordKo" class="input-field" placeholder="한글 뜻 (예: 무지개)">
         <input id="newWordEmoji" class="input-field" placeholder="이모지 (예: 🌈)">
         <button class="btn btn-secondary" style="width:100%;" onclick="addCustomWord()">단어 추가하기</button>
       </div>
 
-      <!-- 새 보상 쿠폰 추가 -->
       <div class="card" style="margin-bottom:12px;">
         <div style="margin-bottom:8px;">🎁 <strong>보상 쿠폰 추가</strong></div>
         <input id="newRewardTitle" class="input-field" placeholder="보상 이름 (예: 보드게임 1판 하기)">
@@ -622,26 +593,45 @@
         <button class="btn btn-primary" style="width:100%;" onclick="addCustomReward()">보상 추가하기</button>
       </div>
 
-      <!-- 이름 변경 및 오늘 미션 리셋 -->
       <div class="card" style="margin-bottom:0;">
         <div style="margin-bottom:8px;">🛠️ <strong>기타 설정</strong></div>
         <div style="display:flex; gap:8px;">
-          <button class="btn btn-outline" style="flex:1;" onclick="resetTodayMission()">🔄 오늘 미션 초기화</button>
-          <button class="btn btn-outline" style="flex:1;" onclick="changeChildName()">✏️ 아이 이름 변경</button>
+          <button class="btn btn-outline" style="flex:1;" onclick="resetTodayMission()">🔄 오늘 미션 리셋</button>
+          <button class="btn btn-outline" style="flex:1;" onclick="changeChildName()">✏️ 이름 변경</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 토스트 메시지 -->
   <div id="toast"></div>
 
   <script>
-    // 부모님 관리 비밀번호 고정값
+    // 기존 서비스 워커(sw.js) 캐시 자동 해제 (예전 화면이 뜨는 현상 방지)
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then(regs => {
+        for (let reg of regs) reg.unregister();
+      });
+    }
+
     const PARENT_PIN = "150320";
     let currentPinInput = "";
 
-    // 초등 저학년 필수 기본 단어 40개
+    // 한글 이름 마지막 글자 받침 유무 자동 판별 함수 ('예승' -> '예승아', '지후' -> '지후야')
+    function hasBatchim(name) {
+      if (!name) return false;
+      const lastCode = name.charCodeAt(name.length - 1);
+      if (lastCode < 0xAC00 || lastCode > 0xD7A3) return false;
+      return (lastCode - 0xAC00) % 28 !== 0;
+    }
+
+    function callName(name) {
+      return name + (hasBatchim(name) ? "아" : "야");
+    }
+
+    function possName(name) {
+      return name + (hasBatchim(name) ? "이의" : "의");
+    }
+
     const DEFAULT_WORDS = [
       { id: 1, en: "apple", ko: "사과", emoji: "🍎", cat: "음식" },
       { id: 2, en: "banana", ko: "바나나", emoji: "🍌", cat: "음식" },
@@ -692,8 +682,7 @@
       { id: 4, title: "주말에 가고 싶은 곳 가기", cost: 150, icon: "🎡" }
     ];
 
-    // 상태 데이터 로드
-    const STORAGE_KEY = "yeseung_english_v2";
+    const STORAGE_KEY = "yeseung_english_v3";
     let state = loadState();
     let currentTab = "home";
     let selectedCategory = "전체";
@@ -710,6 +699,7 @@
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
+          if (parsed.childName === "지후") parsed.childName = "예승";
           ensureDailyMission(parsed);
           return parsed;
         } catch (e) {}
@@ -721,12 +711,7 @@
         words: DEFAULT_WORDS,
         rewards: DEFAULT_REWARDS,
         coupons: [],
-        daily: {
-          date: "",
-          wordIds: [],
-          completedWordIds: [],
-          quizCompleted: 0
-        }
+        daily: { date: "", wordIds: [], completedWordIds: [], quizCompleted: 0 }
       };
       ensureDailyMission(initial);
       return initial;
@@ -756,12 +741,8 @@
       document.title = `${state.childName} English`;
     }
 
-    // 음성 합성 (TTS)
     function speakWord(text, rate = 0.9) {
-      if (!("speechSynthesis" in window)) {
-        showToast("이 기기에서는 음성 재생을 지원하지 않아요.");
-        return;
-      }
+      if (!("speechSynthesis" in window)) return;
       window.speechSynthesis.cancel();
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = "en-US";
@@ -770,7 +751,6 @@
       window.speechSynthesis.speak(utter);
     }
 
-    // 효과음 (Web Audio API)
     function playSound(type) {
       try {
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -778,7 +758,6 @@
         const gain = ctx.createGain();
         osc.connect(gain);
         gain.connect(ctx.destination);
-
         if (type === "ding") {
           osc.frequency.setValueAtTime(587.33, ctx.currentTime);
           osc.frequency.setValueAtTime(880, ctx.currentTime + 0.1);
@@ -786,7 +765,7 @@
           gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
           osc.start();
           osc.stop(ctx.currentTime + 0.35);
-        } else if (type === "wrong") {
+        } else {
           osc.type = "triangle";
           osc.frequency.setValueAtTime(220, ctx.currentTime);
           gain.gain.setValueAtTime(0.15, ctx.currentTime);
@@ -802,20 +781,15 @@
       t.textContent = msg;
       t.style.display = "block";
       clearTimeout(window._toastTimer);
-      window._toastTimer = setTimeout(() => {
-        t.style.display = "none";
-      }, 2200);
+      window._toastTimer = setTimeout(() => { t.style.display = "none"; }, 2200);
     }
 
-    // 탭 전환
     function switchTab(tab) {
       currentTab = tab;
       document.querySelectorAll("nav.tabs button").forEach(btn => {
         btn.classList.toggle("active", btn.dataset.tab === tab);
       });
-      if (tab === "listen" && !quizState) {
-        startNewQuiz();
-      }
+      if (tab === "listen" && !quizState) startNewQuiz();
       render();
     }
 
@@ -828,31 +802,30 @@
       else if (currentTab === "rewards") renderRewards(app);
     }
 
-    // 1. 홈(오늘) 화면
+    // 1. 오늘 탭 (캡처 화면과 동일한 '오늘의 영어 미션 / 예승아, 오늘도 화이팅! 🙌 / 0%' 적용)
     function renderHome(app) {
       const todayWords = state.daily.wordIds
         .map(id => state.words.find(w => w.id === id))
         .filter(Boolean);
       const doneCount = state.daily.completedWordIds.length;
+      const percent = todayWords.length > 0 ? Math.round((doneCount / todayWords.length) * 100) : 0;
 
       app.innerHTML = `
-        <div class="card greeting-banner">
-          <h2>안녕, ${state.childName}아! 👋</h2>
-          <p>오늘의 영단어 카드를 눌러 발음을 듣고 별을 모아봐요!</p>
-          <div class="progress-row">
-            <div class="progress-pill">
-              <span>📖 오늘 단어</span>
-              <strong>${doneCount} / ${todayWords.length}</strong>
+        <div class="card">
+          <div class="mission-header">
+            <div>
+              <span class="mission-badge">오늘의 영어 미션</span>
+              <h2 class="mission-title">${callName(state.childName)}, 오늘도 화이팅! 🙌</h2>
             </div>
-            <div class="progress-pill">
-              <span>🎧 듣기 퀴즈</span>
-              <strong>${state.daily.quizCompleted}회 완료</strong>
-            </div>
+            <div class="mission-percent">${percent}%</div>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width:${percent}%"></div>
           </div>
         </div>
 
         <div class="section-title">
-          <span>🌟 오늘의 단어 5개</span>
+          <span>🌟 오늘의 단어 (${doneCount}/${todayWords.length})</span>
           <span style="font-size:0.9rem; color:var(--muted);">터치하면 읽어줘요 🔊</span>
         </div>
 
@@ -893,7 +866,6 @@
       }
     }
 
-    // 2. 듣기 퀴즈 화면
     function startNewQuiz() {
       const pool = [...state.words].sort(() => Math.random() - 0.5);
       const questions = pool.slice(0, 5).map(answer => {
@@ -904,30 +876,20 @@
         const options = [answer, ...distractors].sort(() => Math.random() - 0.5);
         return { answer, options };
       });
-      quizState = {
-        index: 0,
-        score: 0,
-        questions,
-        answered: false
-      };
+      quizState = { index: 0, score: 0, questions, answered: false };
       setTimeout(() => {
-        if (quizState && quizState.questions[0]) {
-          speakWord(quizState.questions[0].answer.en);
-        }
+        if (quizState && quizState.questions[0]) speakWord(quizState.questions[0].answer.en);
       }, 250);
     }
 
     function renderListen(app) {
       if (!quizState) startNewQuiz();
-
       if (quizState.index >= quizState.questions.length) {
         app.innerHTML = `
           <div class="card quiz-box">
             <div style="font-size:4rem;">🎉</div>
             <h2 style="margin:10px 0;">듣기 퀴즈 완료!</h2>
-            <p style="color:var(--muted); font-size:1.1rem;">
-              5문제 중 <strong>${quizState.score}문제</strong>를 맞혔어요!
-            </p>
+            <p style="color:var(--muted); font-size:1.1rem;">5문제 중 <strong>${quizState.score}문제</strong>를 맞혔어요!</p>
             <button class="btn btn-primary" style="margin-top:16px; padding:14px 28px; font-size:1.1rem;" onclick="startNewQuiz(); render();">
               🎧 한 번 더 도전하기
             </button>
@@ -943,12 +905,10 @@
             <span>문제 ${quizState.index + 1} / 5</span>
             <span>맞힌 개수: ${quizState.score}개</span>
           </div>
-
           <button class="speaker-big" onclick="speakWord('${q.answer.en}', 0.9)">🔊</button>
           <div>
             <button class="btn btn-outline" onclick="speakWord('${q.answer.en}', 0.6)">🐢 천천히 다시 듣기</button>
           </div>
-
           <div class="quiz-grid">
             ${q.options.map(opt => `
               <button class="quiz-option" id="opt-${opt.id}" onclick="submitQuizOption(${opt.id})">
@@ -997,7 +957,6 @@
       }
     }
 
-    // 3. 단어장 화면
     function renderWords(app) {
       const categories = ["전체", "음식", "동물", "학교", "가족·몸", "자연·색깔", "추가단어"];
       const filtered = selectedCategory === "전체"
@@ -1007,19 +966,15 @@
       app.innerHTML = `
         <div class="cat-scroll">
           ${categories.map(cat => `
-            <button class="cat-chip ${selectedCategory === cat ? 'active' : ''}" onclick="selectCategory('${cat}')">
-              ${cat}
-            </button>
+            <button class="cat-chip ${selectedCategory === cat ? 'active' : ''}" onclick="selectCategory('${cat}')">${cat}</button>
           `).join("")}
         </div>
-
         <div class="section-title">
           <span>📚 총 ${filtered.length}개 단어</span>
           <button class="btn btn-outline" style="padding:6px 12px; font-size:0.9rem;" onclick="toggleMeaningMask()">
-            ${hideMeanings ? "👀 뜻 보이기" : "🙈 뜻 가리기(암기모드)"}
+            ${hideMeanings ? "👀 뜻 보이기" : "🙈 뜻 가리기"}
           </button>
         </div>
-
         <div>
           ${filtered.map(w => `
             <div class="word-item" onclick="speakWord('${w.en}')">
@@ -1027,9 +982,7 @@
                 <div class="word-emoji">${w.emoji}</div>
                 <div class="word-text">
                   <div class="en-word en">${w.en} <span style="font-size:0.95rem;">🔊</span></div>
-                  <div class="ko-word ${hideMeanings ? 'masked' : ''}" onclick="event.stopPropagation(); this.classList.toggle('masked');">
-                    ${w.ko}
-                  </div>
+                  <div class="ko-word ${hideMeanings ? 'masked' : ''}" onclick="event.stopPropagation(); this.classList.toggle('masked');">${w.ko}</div>
                 </div>
               </div>
               <span style="font-size:0.85rem; color:var(--muted);">${w.cat}</span>
@@ -1039,27 +992,16 @@
       `;
     }
 
-    function selectCategory(cat) {
-      selectedCategory = cat;
-      render();
-    }
+    function selectCategory(cat) { selectedCategory = cat; render(); }
+    function toggleMeaningMask() { hideMeanings = !hideMeanings; render(); }
 
-    function toggleMeaningMask() {
-      hideMeanings = !hideMeanings;
-      render();
-    }
-
-    // 4. 보상 화면
     function renderRewards(app) {
       app.innerHTML = `
-        <div class="card" style="text-align:center; background:#FFFDF9;">
-          <div style="font-size:0.95rem; color:var(--muted);">✨ ${state.childName}이의 별 주머니</div>
-          <div class="en" style="font-size:2.4rem; font-weight:700; color:var(--primary); margin:6px 0;">
-            ⭐ ${state.stars}
-          </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:0.95rem; color:var(--muted);">✨ ${possName(state.childName)} 별 주머니</div>
+          <div class="en" style="font-size:2.4rem; font-weight:700; color:var(--primary); margin:6px 0;">⭐ ${state.stars}</div>
           <div style="font-size:0.9rem; color:var(--muted);">모은 별로 엄마·아빠와 약속한 쿠폰을 교환해요!</div>
         </div>
-
         <div class="section-title">🎁 보상 쿠폰 교환소</div>
         <div>
           ${state.rewards.map(r => `
@@ -1071,13 +1013,10 @@
                   <div class="en" style="color:var(--primary); font-weight:600;">⭐ ${r.cost}개 필요</div>
                 </div>
               </div>
-              <button class="btn ${state.stars >= r.cost ? 'btn-primary' : 'btn-outline'}" onclick="buyReward(${r.id})">
-                교환하기
-              </button>
+              <button class="btn ${state.stars >= r.cost ? 'btn-primary' : 'btn-outline'}" onclick="buyReward(${r.id})">교환하기</button>
             </div>
           `).join("")}
         </div>
-
         <div class="section-title" style="margin-top:20px;">🎟️ 내 쿠폰함 (${state.coupons.length}장)</div>
         <div>
           ${state.coupons.length === 0
@@ -1108,12 +1047,7 @@
         return;
       }
       state.stars -= r.cost;
-      state.coupons.unshift({
-        uid: Date.now().toString(),
-        title: r.title,
-        icon: r.icon,
-        date: getTodayString()
-      });
+      state.coupons.unshift({ uid: Date.now().toString(), title: r.title, icon: r.icon, date: getTodayString() });
       playSound("ding");
       showToast(`🎉 '${r.title}' 쿠폰을 교환했어요!`);
       saveState();
@@ -1128,7 +1062,6 @@
       showToast("쿠폰을 사용 완료했어요!");
     }
 
-    // 🔒 부모님 비밀번호 모달 제어 (비밀번호: 150320)
     function openPinModal() {
       currentPinInput = "";
       document.getElementById("pinError").textContent = "";
@@ -1151,14 +1084,11 @@
         if (currentPinInput === PARENT_PIN) {
           playSound("ding");
           closePinModal();
-          openParentModal();
+          document.getElementById("parentModal").classList.add("show");
         } else {
           playSound("wrong");
           document.getElementById("pinError").textContent = "비밀번호가 일치하지 않습니다.";
-          setTimeout(() => {
-            currentPinInput = "";
-            updatePinDots();
-          }, 450);
+          setTimeout(() => { currentPinInput = ""; updatePinDots(); }, 450);
         }
       }
     }
@@ -1169,15 +1099,9 @@
     }
 
     function updatePinDots() {
-      const dots = document.querySelectorAll("#pinDots .pin-dot");
-      dots.forEach((dot, idx) => {
+      document.querySelectorAll("#pinDots .pin-dot").forEach((dot, idx) => {
         dot.classList.toggle("filled", idx < currentPinInput.length);
       });
-    }
-
-    // ⚙️ 부모님 관리 모달 기능
-    function openParentModal() {
-      document.getElementById("parentModal").classList.add("show");
     }
 
     function closeParentModal() {
@@ -1195,17 +1119,8 @@
       const en = document.getElementById("newWordEn").value.trim();
       const ko = document.getElementById("newWordKo").value.trim();
       const emoji = document.getElementById("newWordEmoji").value.trim() || "📘";
-      if (!en || !ko) {
-        showToast("영어 단어와 한글 뜻을 모두 입력해 주세요.");
-        return;
-      }
-      state.words.unshift({
-        id: Date.now(),
-        en,
-        ko,
-        emoji,
-        cat: "추가단어"
-      });
+      if (!en || !ko) { showToast("영어 단어와 한글 뜻을 입력해 주세요."); return; }
+      state.words.unshift({ id: Date.now(), en, ko, emoji, cat: "추가단어" });
       document.getElementById("newWordEn").value = "";
       document.getElementById("newWordKo").value = "";
       document.getElementById("newWordEmoji").value = "";
@@ -1218,16 +1133,8 @@
       const title = document.getElementById("newRewardTitle").value.trim();
       const cost = parseInt(document.getElementById("newRewardCost").value, 10);
       const icon = document.getElementById("newRewardIcon").value.trim() || "🎁";
-      if (!title || isNaN(cost) || cost <= 0) {
-        showToast("보상 이름과 필요한 별 개수를 입력해 주세요.");
-        return;
-      }
-      state.rewards.push({
-        id: Date.now(),
-        title,
-        cost,
-        icon
-      });
+      if (!title || isNaN(cost) || cost <= 0) { showToast("보상 이름과 별 개수를 입력해 주세요."); return; }
+      state.rewards.push({ id: Date.now(), title, cost, icon });
       document.getElementById("newRewardTitle").value = "";
       document.getElementById("newRewardCost").value = "";
       document.getElementById("newRewardIcon").value = "";
@@ -1254,7 +1161,6 @@
       }
     }
 
-    // 초기 실행
     render();
   </script>
 </body>
