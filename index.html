@@ -175,7 +175,7 @@
           <span class="text-2xl">🐣</span>
           <div>
             <div class="flex items-center gap-1">
-              <span id="childNameTitle" class="text-xl text-[#2B2D42] tracking-wide">지후</span>
+              <span id="childNameTitle" class="text-xl text-[#2B2D42] tracking-wide">예승</span>
               <span class="en-font font-bold text-xl text-[#FF8A5B]">English</span>
               <span class="text-xs text-gray-400 group-hover:text-gray-600 ml-0.5">✏️</span>
             </div>
@@ -309,7 +309,7 @@
         console.error('State load error:', e);
       }
       return {
-        childName: '지후',
+        childName: '예승',
         stars: 15,
         streak: 1,
         lastVisitDate: getTodayStr(),
@@ -1227,7 +1227,7 @@
       openModal(`
         <h3 class="text-xl text-[#2B2D42] mb-2">🐣 아이 이름 설정</h3>
         <p class="text-xs text-gray-500 mb-3">앱 상단 타이틀과 응원 메시지에 표시될 이름이에요.</p>
-        <input id="childNameInput" type="text" value="${state.childName}" placeholder="예: 지후, 서연, 하준" class="w-full px-4 py-3 rounded-xl border border-[#E5D2B8] bg-white text-lg mb-4" />
+        <input id="childNameInput" type="text" value="${state.childName}" placeholder="예: 예승, 서연, 하준" class="w-full px-4 py-3 rounded-xl border border-[#E5D2B8] bg-white text-lg mb-4" />
         <div class="grid grid-cols-2 gap-2.5">
           <button onclick="closeModal()" class="py-2.5 rounded-xl bg-gray-200 text-gray-700">취소</button>
           <button onclick="saveChildName()" class="tactile-btn py-2.5 rounded-xl bg-[#FF8A5B] text-white">저장하기</button>
