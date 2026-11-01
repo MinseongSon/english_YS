@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="manifest" href="manifest.json">
-  <title>우리 아이 English</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>예승 English</title>
   <meta name="theme-color" content="#FFF6E9">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="우리 아이 English">
+  <meta name="apple-mobile-web-app-title" content="예승 English">
 
   <!-- Google Fonts: Fredoka (영어) & Jua (한글) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -255,7 +255,7 @@
       { id: 'w19', en: 'egg', kr: '달걀', pron: '에그', emoji: '🥚', cat: 'food', ex: 'One egg for breakfast.' },
       { id: 'w20', en: 'cake', kr: '케이크', pron: '케이크', emoji: '🍰', cat: 'food', ex: 'Happy birthday cake!' },
 
-      // 가족·학교 (School & Family)
+      // 학교·사물·가족 (School & Objects)
       { id: 'w21', en: 'mom', kr: '엄마', pron: '맘', emoji: '👩', cat: 'school', ex: 'I love my mom.' },
       { id: 'w22', en: 'dad', kr: '아빠', pron: '대드', emoji: '👨', cat: 'school', ex: 'My dad is tall.' },
       { id: 'w23', en: 'friend', kr: '친구', pron: '프렌드', emoji: '👫', cat: 'school', ex: 'You are my best friend.' },
@@ -267,31 +267,30 @@
       { id: 'w29', en: 'desk', kr: '책상', pron: '데스크', emoji: '🪑', cat: 'school', ex: 'Clean your desk.' },
       { id: 'w30', en: 'bus', kr: '버스', pron: '버스', emoji: '🚌', cat: 'school', ex: 'Here comes the bus.' },
 
-      // 동작·기분·자연 (Actions & Feelings)
-      { id: 'w31', en: 'happy', kr: '행복한', pron: '해피', emoji: '😄', cat: 'action', ex: 'I am so happy today!' },
-      { id: 'w32', en: 'smile', kr: '미소 짓다', pron: '스마일', emoji: '😊', cat: 'action', ex: 'Smile for the camera.' },
-      { id: 'w33', en: 'run', kr: '달리다', pron: '런', emoji: '🏃', cat: 'action', ex: 'Run fast!' },
-      { id: 'w34', en: 'jump', kr: '점프하다', pron: '점프', emoji: '🦘', cat: 'action', ex: 'Jump up high!' },
-      { id: 'w35', en: 'sleep', kr: '자다', pron: '슬립', emoji: '😴', cat: 'action', ex: 'Time to sleep.' },
-      { id: 'w36', en: 'sing', kr: '노래하다', pron: '씽', emoji: '🎤', cat: 'action', ex: 'Sing a happy song.' },
-      { id: 'w37', en: 'dance', kr: '춤추다', pron: '댄스', emoji: '💃', cat: 'action', ex: 'Let us dance together.' },
-      { id: 'w38', en: 'sun', kr: '해 (태양)', pron: '썬', emoji: '☀️', cat: 'action', ex: 'The sun is bright.' },
-      { id: 'w39', en: 'star', kr: '별', pron: '스타', emoji: '🌟', cat: 'action', ex: 'Twinkle little star.' },
-      { id: 'w40', en: 'rainbow', kr: '무지개', pron: '레인보우', emoji: '🌈', cat: 'action', ex: 'Look at the rainbow!' }
+      // 자연·색깔·동작 (Nature, Colors & Actions)
+      { id: 'w31', en: 'happy', kr: '행복한', pron: '해피', emoji: '😄', cat: 'nature', ex: 'I am so happy today!' },
+      { id: 'w32', en: 'red', kr: '빨간색', pron: '레드', emoji: '🔴', cat: 'nature', ex: 'A bright red ball.' },
+      { id: 'w33', en: 'blue', kr: '파란색', pron: '블루', emoji: '🔵', cat: 'nature', ex: 'The sky is blue.' },
+      { id: 'w34', en: 'yellow', kr: '노란색', pron: '옐로우', emoji: '🟡', cat: 'nature', ex: 'Cute yellow duck.' },
+      { id: 'w35', en: 'green', kr: '초록색', pron: '그린', emoji: '🟢', cat: 'nature', ex: 'Green grass in the park.' },
+      { id: 'w36', en: 'flower', kr: '꽃', pron: '플라워', emoji: '🌸', cat: 'nature', ex: 'Pretty pink flower.' },
+      { id: 'w37', en: 'tree', kr: '나무', pron: '트리', emoji: '🌳', cat: 'nature', ex: 'A tall green tree.' },
+      { id: 'w38', en: 'sun', kr: '해 (태양)', pron: '썬', emoji: '☀️', cat: 'nature', ex: 'The sun is bright.' },
+      { id: 'w39', en: 'star', kr: '별', pron: '스타', emoji: '🌟', cat: 'nature', ex: 'Twinkle little star.' },
+      { id: 'w40', en: 'rainbow', kr: '무지개', pron: '레인보우', emoji: '🌈', cat: 'nature', ex: 'Look at the rainbow!' }
     ];
 
     const DEFAULT_REWARDS = [
-      { id: 'r1', title: '좋아하는 간식 고르기', cost: 30, emoji: '🍦' },
-      { id: 'r2', title: '유튜브/만화 20분 보기', cost: 50, emoji: '📺' },
-      { id: 'r3', title: '엄마·아빠와 보드게임 한 판', cost: 70, emoji: '🎲' },
-      { id: 'r4', title: '문구점 뽑기/스티커 사기', cost: 100, emoji: '🎁' },
-      { id: 'r5', title: '주말 나들이 장소 선택권', cost: 200, emoji: '🎡' }
+      { id: 'r1', title: '유튜브/게임 30분 쿠폰', cost: 30, emoji: '📺' },
+      { id: 'r2', title: '맛있는 아이스크림 사주기', cost: 50, emoji: '🍦' },
+      { id: 'r3', title: '보드게임/스위치 같이 하기', cost: 80, emoji: '🎲' },
+      { id: 'r4', title: '원하는 문구점 장난감 고르기', cost: 150, emoji: '🎁' }
     ];
 
     /*************************************************************
-     * 2. 앱 상태 관리 (LocalStorage 자동 저장)
+     * 2. 앱 상태 관리 (LocalStorage 자동 저장 - 예승 전용 키)
      *************************************************************/
-    const STORAGE_KEY = 'jihoo_english_app_state_v1';
+    const STORAGE_KEY = 'yeseung_english_app_v1';
 
     function getTodayStr() {
       const d = new Date();
@@ -511,10 +510,12 @@
      *************************************************************/
     let currentTab = 'home';
 
-    // 단어장 필터 상태
+    // 단어장 필터 및 플래시카드 상태
     let wordFilterCat = 'all';
     let wordFilterStatus = 'all'; // 'all' | 'unmastered' | 'mastered'
     let wordSearchQuery = '';
+    let flashcardHideMeaning = false; // 뜻 가리기 토글
+    let revealedWordIds = {}; // 가려진 단어 중 개별 터치해 확인한 단어
 
     // 듣기 퀴즈 상태
     let quizState = {
@@ -565,9 +566,9 @@
           <div class="flex items-center justify-between mb-2">
             <div>
               <span class="inline-block bg-[#FFE5D4] text-[#FF7844] text-xs px-2.5 py-1 rounded-full mb-1">오늘의 영어 미션</span>
-              <h2 class="text-xl text-[#2B2D42]">${state.childName}야, 오늘도 화이팅! 🙌</h2>
+              <h2 class="text-xl text-[#2B2D42]">안녕, ${state.childName}아! 오늘도 재미있게 영어 공부해볼까? 🙌</h2>
             </div>
-            <div class="text-right">
+            <div class="text-right shrink-0 ml-2">
               <span class="en-font font-bold text-2xl text-[#FF8A5B]">${missionPercent}%</span>
             </div>
           </div>
@@ -622,21 +623,23 @@
                       <div class="flex items-center gap-2">
                         <span class="en-font font-bold text-2xl text-[#2B2D42]">${w.en}</span>
                         <span class="text-xs bg-[#FFF0DF] text-[#E67E22] px-2 py-0.5 rounded-lg">[${w.pron}]</span>
-                        <span class="text-base">🔊</span>
                       </div>
                       <p class="text-base text-[#118AB2] mt-0.5">${w.kr}</p>
-                      <p class="en-font text-xs text-gray-400 mt-0.5">${w.ex}</p>
+                      <div class="flex items-center gap-2 mt-1">
+                        <button onclick="event.stopPropagation(); speakWord('${w.en}', 0.85)" class="text-xs bg-[#FFF6E9] text-[#2B2D42] px-2 py-0.5 rounded-lg border border-[#EBD8C0]">🔊 발음</button>
+                        <button onclick="event.stopPropagation(); speakWord('${w.en}', 0.6)" class="text-xs bg-[#FFF6E9] text-[#118AB2] px-2 py-0.5 rounded-lg border border-[#EBD8C0]">🐢 천천히</button>
+                      </div>
                     </div>
                   </div>
 
                   <!-- 오른쪽: 외웠어요 버튼 -->
-                  <button onclick="toggleWordMastered('${w.id}')" class="tactile-btn shrink-0 px-3.5 py-2.5 rounded-2xl text-sm flex flex-col items-center justify-center min-w-[78px] ${
+                  <button onclick="toggleWordMastered('${w.id}')" class="tactile-btn shrink-0 px-3.5 py-2.5 rounded-2xl text-sm flex flex-col items-center justify-center min-w-[82px] ${
                     isMastered
                       ? 'bg-[#06D6A0] text-white'
                       : 'bg-[#FFD166] text-[#5C4400]'
                   }">
                     <span class="text-base">${isMastered ? '✅' : '⭐'}</span>
-                    <span class="mt-0.5">${isMastered ? '외웠어요!' : '+5별 받기'}</span>
+                    <span class="mt-0.5">${isMastered ? '외웠어요!' : '외웠어요 (+5⭐)'}</span>
                   </button>
                 </div>
               `;
@@ -661,7 +664,7 @@
     }
 
     function speakAndHighlight(word) {
-      speakWord(word, 0.82);
+      speakWord(word, 0.85);
     }
 
     function toggleWordMastered(wordId) {
@@ -737,12 +740,12 @@
       if (quizState.finished) {
         container.innerHTML = `
           <div class="tactile-card p-6 text-center my-4 pop-in">
-            <div class="text-6xl mb-3">🏆</div>
-            <h2 class="text-2xl text-[#2B2D42]">듣기 퀴즈 끝! 참 잘했어요!</h2>
+            <div class="text-6xl mb-3">🎊🏆🎊</div>
+            <h2 class="text-2xl text-[#2B2D42]">${state.childName}아, 듣기 퀴즈 끝! 최고야!</h2>
             <p class="text-base text-gray-500 mt-1">5문제 중 <span class="en-font font-bold text-[#FF8A5B]">${quizState.score}</span>문제를 맞혔어요!</p>
 
             <div class="bg-[#FFF6E9] rounded-2xl p-4 my-5 border-2 border-[#FFE0B5]">
-              <p class="text-sm text-[#8C6239]">퀴즈 완주 보상</p>
+              <p class="text-sm text-[#8C6239]">퀴즈 완주 보너스 별</p>
               <p class="en-font font-bold text-3xl text-[#E67E22] mt-1">+20 ⭐ 획득!</p>
             </div>
 
@@ -794,11 +797,11 @@
           ` : ''}
 
           <div class="flex justify-center gap-2.5 mt-4">
-            <button onclick="speakWord('${currentQ.target.en}', 0.88)" class="tactile-btn bg-[#FFF6E9] text-[#2B2D42] px-3.5 py-1.5 rounded-xl text-xs border border-[#EBD8C0]">
-              🐇 보통 속도로 듣기
+            <button onclick="speakWord('${currentQ.target.en}', 0.88)" class="tactile-btn bg-[#FFF6E9] text-[#2B2D42] px-4 py-2 rounded-xl text-sm border border-[#EBD8C0]">
+              🔊 소리 듣기
             </button>
-            <button onclick="speakWord('${currentQ.target.en}', 0.55)" class="tactile-btn bg-[#FFF6E9] text-[#118AB2] px-3.5 py-1.5 rounded-xl text-xs border border-[#EBD8C0]">
-              🐢 천천히 또박또박 듣기
+            <button onclick="speakWord('${currentQ.target.en}', 0.65)" class="tactile-btn bg-[#FFF6E9] text-[#118AB2] px-4 py-2 rounded-xl text-sm border border-[#EBD8C0]">
+              🐢 천천히 듣기
             </button>
           </div>
         </div>
@@ -869,7 +872,7 @@
     }
 
     /*************************************************************
-     * 탭 3: 📚 단어장 (Words)
+     * 탭 3: 📚 단어장 (Words & Flashcard Mode)
      *************************************************************/
     function renderWordsTab(container) {
       const allWords = getAllWords();
@@ -890,23 +893,32 @@
       const categories = [
         { id: 'all', label: '전체', emoji: '🌈' },
         { id: 'animal', label: '동물', emoji: '🐶' },
-        { id: 'food', label: '과일·음식', emoji: '🍎' },
-        { id: 'school', label: '가족·학교', emoji: '🏫' },
-        { id: 'action', label: '동작·자연', emoji: '🏃' }
+        { id: 'food', label: '음식', emoji: '🍎' },
+        { id: 'school', label: '학교/사물', emoji: '🏫' },
+        { id: 'nature', label: '자연/색깔', emoji: '🌸' }
       ];
 
       container.innerHTML = `
-        <!-- 단어장 요약 및 새 단어 추가 버튼 -->
-        <div class="tactile-card p-4 mb-4 flex items-center justify-between">
+        <!-- 단어장 요약 및 플래시카드 모드/단어 추가 버튼 -->
+        <div class="tactile-card p-4 mb-4 flex items-center justify-between gap-2">
           <div>
-            <p class="text-xs text-gray-500">내가 외운 영단어</p>
+            <p class="text-xs text-gray-500">${state.childName}가 외운 영단어</p>
             <p class="text-lg text-[#2B2D42]">
               총 <span class="en-font font-bold text-[#06D6A0] text-xl">${masteredCount}</span> / ${allWords.length}개 완료!
             </p>
           </div>
-          <button onclick="openAddWordModal()" class="tactile-btn bg-[#FF8A5B] text-white px-3.5 py-2 rounded-2xl text-sm">
-            ➕ 새 단어 추가
-          </button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="toggleFlashcardMode()" class="tactile-btn px-3 py-2 rounded-2xl text-xs border ${
+              flashcardHideMeaning
+                ? 'bg-[#118AB2] text-white border-[#118AB2]'
+                : 'bg-[#FFF6E9] text-[#2B2D42] border-[#E5D2B8]'
+            }">
+              ${flashcardHideMeaning ? '👀 뜻 보이기' : '🙈 뜻 가리기'}
+            </button>
+            <button onclick="openAddWordModal()" class="tactile-btn bg-[#FF8A5B] text-white px-3 py-2 rounded-2xl text-xs">
+              ➕ 단어 추가
+            </button>
+          </div>
         </div>
 
         <!-- 카테고리 필터 알약 버튼 -->
@@ -926,12 +938,12 @@
         <div class="flex items-center gap-2 mb-4">
           <div class="flex bg-white rounded-xl p-1 border border-[#EBD8C0] shrink-0 text-xs">
             <button onclick="setWordStatusFilter('all')" class="px-2.5 py-1.5 rounded-lg ${wordFilterStatus === 'all' ? 'bg-[#FFD166] text-[#5C4400]' : 'text-gray-500'}">전체</button>
-            <button onclick="setWordStatusFilter('unmastered')" class="px-2.5 py-1.5 rounded-lg ${wordFilterStatus === 'unmastered' ? 'bg-[#FFD166] text-[#5C4400]' : 'text-gray-500'}">안 외움</button>
-            <button onclick="setWordStatusFilter('mastered')" class="px-2.5 py-1.5 rounded-lg ${wordFilterStatus === 'mastered' ? 'bg-[#06D6A0] text-white' : 'text-gray-500'}">외움</button>
+            <button onclick="setWordStatusFilter('unmastered')" class="px-2.5 py-1.5 rounded-lg ${wordFilterStatus === 'unmastered' ? 'bg-[#FFD166] text-[#5C4400]' : 'text-gray-500'}">안 외운 단어</button>
+            <button onclick="setWordStatusFilter('mastered')" class="px-2.5 py-1.5 rounded-lg ${wordFilterStatus === 'mastered' ? 'bg-[#06D6A0] text-white' : 'text-gray-500'}">외운 단어</button>
           </div>
           <input
             type="text"
-            placeholder="단어 검색 (예: 사과, dog)"
+            placeholder="단어 검색..."
             value="${wordSearchQuery}"
             oninput="handleWordSearch(this.value)"
             class="w-full bg-white px-3.5 py-2 rounded-xl text-sm border border-[#EBD8C0] focus:outline-none focus:border-[#FF8A5B]"
@@ -947,9 +959,10 @@
             </div>
           ` : filtered.map(w => {
             const isM = state.masteredIds.includes(w.id);
+            const hideKr = flashcardHideMeaning && !revealedWordIds[w.id];
             return `
               <div class="tactile-card p-3.5 flex items-center justify-between gap-3 ${isM ? 'bg-[#F4FBF8] border-[#B8EBD9]' : ''}">
-                <div onclick="speakWord('${w.en}', 0.82)" class="flex items-center gap-3 flex-1 cursor-pointer">
+                <div onclick="handleWordCardClick('${w.id}', '${w.en}')" class="flex items-center gap-3 flex-1 cursor-pointer">
                   <div class="w-12 h-12 rounded-2xl bg-[#FFF6E9] flex items-center justify-center text-2xl border border-[#F2E0C9] shrink-0">
                     ${w.emoji}
                   </div>
@@ -959,22 +972,42 @@
                       <span class="text-xs text-[#E67E22] bg-[#FFF0DF] px-1.5 py-0.5 rounded">[${w.pron}]</span>
                       <span class="text-xs">🔊</span>
                     </div>
-                    <p class="text-sm text-[#118AB2]">${w.kr}</p>
+                    ${hideKr ? `
+                      <span class="inline-block mt-1 text-xs bg-[#EBF5FB] text-[#118AB2] px-2.5 py-0.5 rounded-lg border border-[#BCE0FD]">
+                        ❓ 터치해서 뜻 확인하기
+                      </span>
+                    ` : `
+                      <p class="text-sm text-[#118AB2] mt-0.5">${w.kr}</p>
+                    `}
                   </div>
                 </div>
 
-                <button onclick="toggleWordMastered('${w.id}')" class="px-3 py-1.5 rounded-xl text-xs border transition ${
+                <button onclick="toggleWordMastered('${w.id}')" class="px-3 py-1.5 rounded-xl text-xs border transition shrink-0 ${
                   isM
                     ? 'bg-[#06D6A0] text-white border-[#06D6A0]'
                     : 'bg-[#FFF6E9] text-gray-600 border-[#E5D2B8]'
                 }">
-                  ${isM ? '✅ 외움' : '외웠어요 체크'}
+                  ${isM ? '✅ 외움' : '외웠어요'}
                 </button>
               </div>
             `;
           }).join('')}
         </div>
       `;
+    }
+
+    function toggleFlashcardMode() {
+      flashcardHideMeaning = !flashcardHideMeaning;
+      revealedWordIds = {};
+      renderWordsTab(document.getElementById('app'));
+    }
+
+    function handleWordCardClick(wordId, wordEn) {
+      speakWord(wordEn, 0.82);
+      if (flashcardHideMeaning) {
+        revealedWordIds[wordId] = !revealedWordIds[wordId];
+        renderWordsTab(document.getElementById('app'));
+      }
     }
 
     function setWordCategory(cat) {
@@ -994,7 +1027,7 @@
 
     function openAddWordModal() {
       openModal(`
-        <h3 class="text-xl text-[#2B2D42] mb-3">➕ 우리 아이 새 단어 추가</h3>
+        <h3 class="text-xl text-[#2B2D42] mb-3">➕ ${state.childName}의 새 단어 추가</h3>
         <div class="space-y-3 text-sm">
           <div>
             <label class="block text-gray-600 mb-1">영어 단어 (필수)</label>
@@ -1014,6 +1047,15 @@
               <input id="newWordEmoji" type="text" value="🦖" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E5D2B8] bg-white text-center" />
             </div>
           </div>
+          <div>
+            <label class="block text-gray-600 mb-1">카테고리</label>
+            <select id="newWordCat" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E5D2B8] bg-white">
+              <option value="animal">🐶 동물</option>
+              <option value="food">🍎 음식</option>
+              <option value="school">🏫 학교/사물</option>
+              <option value="nature">🌸 자연/색깔</option>
+            </select>
+          </div>
         </div>
         <div class="grid grid-cols-2 gap-2.5 mt-5">
           <button onclick="closeModal()" class="py-2.5 rounded-xl bg-gray-200 text-gray-700">취소</button>
@@ -1027,6 +1069,8 @@
       const kr = document.getElementById('newWordKr').value.trim();
       const pron = document.getElementById('newWordPron').value.trim() || en;
       const emoji = document.getElementById('newWordEmoji').value.trim() || '🌟';
+      const catEl = document.getElementById('newWordCat');
+      const cat = catEl ? catEl.value : 'school';
 
       if (!en || !kr) {
         showToast('영어 단어와 한글 뜻을 입력해 주세요!', 'bg-[#E74C3C]');
@@ -1039,7 +1083,7 @@
         kr,
         pron,
         emoji,
-        cat: 'school',
+        cat,
         ex: `Let's say ${en}!`
       };
 
@@ -1055,11 +1099,11 @@
      *************************************************************/
     function renderRewardsTab(container) {
       container.innerHTML = `
-        <!-- 보유 별 포인트 배너 -->
+        <!-- 보유 별 포인트 배너 (예승이의 별 주머니) -->
         <div class="tactile-card p-5 mb-5 bg-gradient-to-r from-[#FFD166] to-[#FFB703] text-[#4A3500] border-none">
           <div class="flex items-center justify-between">
             <div>
-              <p class="text-xs opacity-80">${state.childName}가 열심히 모은 별</p>
+              <p class="text-xs opacity-85">✨ ${state.childName}이의 별 주머니</p>
               <div class="flex items-center gap-2 mt-1">
                 <span class="text-3xl">⭐</span>
                 <span class="en-font font-bold text-4xl">${state.stars}</span>
@@ -1128,7 +1172,7 @@
                     <span class="text-xs bg-gray-200 text-gray-600 px-3 py-1.5 rounded-xl">사용 완료</span>
                   ` : `
                     <button onclick="useCoupon('${c.cid}')" class="tactile-btn bg-[#06D6A0] text-white px-3.5 py-2 rounded-xl text-xs">
-                      부모님께 사용하기
+                      사용 완료
                     </button>
                   `}
                 </div>
@@ -1251,10 +1295,15 @@
         <h3 class="text-xl text-[#2B2D42] mb-3">⚙️ 부모님 관리 메뉴</h3>
         <div class="space-y-2.5 text-sm">
           <div class="bg-white p-3.5 rounded-2xl border border-[#EBD8C0] flex items-center justify-between">
-            <span>🌟 칭찬 별 보너스 선물하기</span>
-            <button onclick="giveParentBonusStars()" class="tactile-btn bg-[#FFD166] text-[#5C4400] px-3 py-1.5 rounded-xl text-xs">
-              +10⭐ 주기
-            </button>
+            <span>🌟 칭찬 별 선물 / 차감</span>
+            <div class="flex gap-1.5">
+              <button onclick="adjustParentStars(-10)" class="tactile-btn bg-gray-200 text-gray-700 px-2.5 py-1.5 rounded-xl text-xs">
+                -10⭐
+              </button>
+              <button onclick="adjustParentStars(10)" class="tactile-btn bg-[#FFD166] text-[#5C4400] px-2.5 py-1.5 rounded-xl text-xs">
+                +10⭐ 선물하기
+              </button>
+            </div>
           </div>
           <div class="bg-white p-3.5 rounded-2xl border border-[#EBD8C0] flex items-center justify-between">
             <span>➕ 맞춤형 단어 추가하기</span>
@@ -1263,7 +1312,19 @@
             </button>
           </div>
           <div class="bg-white p-3.5 rounded-2xl border border-[#EBD8C0] flex items-center justify-between">
-            <span>🗑️ 학습 기록 초기화</span>
+            <span>🎁 새 보상 쿠폰 등록하기</span>
+            <button onclick="openAddRewardModal()" class="tactile-btn bg-[#FF8A5B] text-white px-3 py-1.5 rounded-xl text-xs">
+              보상 추가
+            </button>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-[#EBD8C0] flex items-center justify-between">
+            <span>🔄 오늘 미션 다시 뽑기</span>
+            <button onclick="pickNewDailyWords(true); closeModal();" class="bg-[#FFF6E9] text-[#2B2D42] border border-[#E5D2B8] px-3 py-1.5 rounded-xl text-xs">
+              재설정
+            </button>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-[#EBD8C0] flex items-center justify-between">
+            <span>🗑️ 전체 기록 초기화</span>
             <button onclick="resetAllProgress()" class="bg-red-100 text-red-600 px-3 py-1.5 rounded-xl text-xs">
               초기화
             </button>
@@ -1273,12 +1334,12 @@
       `);
     });
 
-    function giveParentBonusStars() {
-      state.stars += 10;
-      playSound('ding');
+    function adjustParentStars(amount) {
+      state.stars = Math.max(0, state.stars + amount);
+      if (amount > 0) playSound('ding');
       saveState();
       renderCurrentTab();
-      showToast('🌟 부모님 칭찬 보너스 +10⭐ 지급!', 'bg-[#06D6A0]');
+      showToast(amount > 0 ? `🌟 부모님 칭찬 보너스 +${amount}⭐ 지급!` : `별 ${Math.abs(amount)}개가 차감되었어요.`, 'bg-[#06D6A0]');
     }
 
     function resetAllProgress() {
