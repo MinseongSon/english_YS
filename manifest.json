@@ -1,6 +1,6 @@
 {
-  "name": "우리 아이 영어 단어장",
-  "short_name": "영어공부",
+  "name": "예승 English",
+  "short_name": "예승영어",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#FFF6E9",
